@@ -1,11 +1,11 @@
-#Manipulation d’expressions arithmétiques
+##Manipulation d’expressions arithmétiques
 
 
-## To do list : Programme
+### To do list : Programme
 1. Implémenter l'interface TreeBuilderIF => Voir annexe : buildExpressionTree
 2. Implémenter l'interface ExprIF
-  * getReducedTree()
-  * toString()
+  - getReducedTree()
+  - toString()
 3. Tester les 2 implémentations 
 4. Implémenter l'algorithme récursif, parcourant l'AST 
 5. Implémenter la résolution de l'AST 
@@ -13,21 +13,32 @@
 7. Implémenter la classe Main, permettant d'entrer des arguments en paramètre
 8. Tester le programme et les performances
 9. Effectuer des optimisations au niveau de l'expression mathématique
-  * Simplifications *évidentes* => 1*a = a ; 0+a = a ; ...
+  - Simplifications *évidentes* => 1*a = a ; 0+a = a ; ...
 10. Retester les performances 
 
-## To do list : Rapport
-* Diagramme de classes
-* Choix d'implémentation
-* Complexité des différentes opérations des interfaces *TreeBuilderIF* & *ExprIF*
-* Difficultés rencontrées 
+### To do list : Rapport
+- Diagramme de classes
+- Choix d'implémentation
+- Complexité des différentes opérations des interfaces **TreeBuilderIF** & **ExprIF**
+- Difficultés rencontrées 
 
-## Choix de l'implémentation de l'arbre 
+### Choix de l'implémentation de l'arbre 
 **Plusieurs choix possibles :**
-* Structure chainée
-* Tableau dynamique
+- Structure chainée
+- Tableau dynamique
 
-*À prioris* la structure chainée semble la plus polyvalente, complexité spatiale en Theta(n)
-=> À confirmer !
+> À prioris la structure chainée semble la plus polyvalente, complexité spatiale en Theta(n) => À confirmer !
+
+### Spécifications
+
+
+#### Format d'entrée
+ - 1 expression / ligne ;
+ - Expressions complètement parenthésées ;
+ - Chaque élément de l’expression est séparé par un espace. Par exemple : `( 5 * ( 4 / 2 ) )`
+
+#### Format de sortie
+ - Pas d’espace entre les éléments d’une expression. Il y a “=” entre 2 expressions consécutives avec un espace avant et un autre après. Par exemple : `(5.0*(4.0/2.0)) = (5.0*2.0) = 10.0`
+ - Représentation en String des nombres est celle de `Double.toString(double d)`.
 
 
