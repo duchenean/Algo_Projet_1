@@ -29,8 +29,18 @@
 
 > À prioris la structure chainée semble la plus polyvalente, complexité spatiale en Theta(n) => À confirmer !
 
-### Spécifications
+### Contraintes
+- Implémentation de l’interface ExprIF
+- La/les classes liées à la structure de l’arbre **dans le package _exprTree_.**
+- La classe qui crée l’AST à partir d’une expression s’appelle *TreeBuilder*. Elle implémente l’interface *TreeBuilderIF* et se trouve dans le package *builder*.
+- Le constructeur de *TreeBuilder* prend **un String** qui représente l’expression arithmétique.
+- Les opérateurs à considérer sont **+, -, * et /.**
+- *getReducedTree*, simplifie l’arbre courant (en renvoyant un arbre simplifié), ou sa/ses méthode(s) auxiliaire(s) pour réaliser cette opération, ainsi que la méthode toString, qui permet de convertir un arbre en une expression complètement parenthésée sous forme de String, sont à appeler de manière récursive (utiliser un parcours adéquat).
 
+>  /!\ LE CODE DOIT ÊTRE CLAIR ET FACILEMENT MAINTENABLE
+
+
+### Spécifications
 
 #### Format d'entrée
  - 1 expression / ligne ;
