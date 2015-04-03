@@ -21,4 +21,29 @@ public class TreeBuilder implements TreeBuilderIF {
         Stack<String> stack;
         return null;
     }
+
+    private static boolean isOperation(char c) {
+        if (c == '+' || c == '-' || c == '*' || c == '/') {
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean isClosingParenthesis(char c) {
+        if (c == ')') {
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean isDigit(char c) {
+        int NumVal = Character.getNumericValue(c);
+        if (NumVal <= 9 && NumVal >= 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+    }
 }
