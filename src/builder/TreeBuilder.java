@@ -160,9 +160,4 @@ public class TreeBuilder implements TreeBuilderIF {
         }
         return false;
     }
-
-    public static void main(String[] args) {
-        TreeBuilder tb = new TreeBuilder("( 4 - 2 )");
-        tb.build();
-    }
 }
