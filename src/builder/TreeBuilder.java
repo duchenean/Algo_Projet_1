@@ -78,24 +78,17 @@ public class TreeBuilder implements TreeBuilderIF {
 
     @Override
     public ExprIF build() {
-        StringBuilder number = new StringBuilder();
+
         Stack<Node> stack = new Stack<Node>();
         for (int i = 0; i < exp.length(); i++) {
+            StringBuilder number = new StringBuilder();
             if (isDigit(exp.charAt(i))) {
-                if (!isDigit(exp.charAt(i - 1))) {
-                    number.delete(0, number.length());
+                while (isDigit(exp.charAt(i))) {
                     number.append(exp.charAt(i));
-                    if (!isDigit(exp.charAt(i + 1))) {
-                        Node node = new Node(Integer.parseInt(number.toString()));
-                        stack.push(node);
-                    }
-                } else if (isDigit(exp.charAt(i - 1))) {
-                    number.append(exp.charAt(i));
-                } else if (exp.charAt(i + 1) == -1) {
-                    Node node = new Node(Integer.parseInt(number.toString()));
-                    stack.push(node);
+                    i++;
                 }
-
+                Node node = new Node(Integer.parseInt(number.toString()));
+                stack.push(node);
             } else if (isOperation(exp.charAt(i))) {
                 Node node = new Node(exp.charAt(i));
                 stack.push(node);
@@ -159,5 +152,14 @@ public class TreeBuilder implements TreeBuilderIF {
             return true;
         }
         return false;
+    }
+
+    public static void main(String[] args) {
+        TreeBuilder tree = new TreeBuilder("( ( 57 + 478 ) * 89086 )");
+        Node root = (Node) tree.build();
+        System.out.println(root);
+        System.out.println(root.getNextLeft());
+        System.out.println(root.getNextRight());
+
     }
 }
