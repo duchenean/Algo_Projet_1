@@ -60,7 +60,7 @@ public class TreeBuilder implements TreeBuilderIF {
 
         @Override
         public String toString() {
-            return null;
+            return content.toString();
         }
     }
 
@@ -78,24 +78,38 @@ public class TreeBuilder implements TreeBuilderIF {
 
     @Override
     public ExprIF build() {
+        StringBuilder number = new StringBuilder();
         Stack<Node> stack = new Stack<Node>();
-        for (int i = 0; i < exp.length() - 1; i++) {
+        for (int i = 0; i < exp.length(); i++) {
+            if (isDigit(exp.charAt(i))) {
+                if (!isDigit(exp.charAt(i - 1))) {
+                    number.delete(0, number.length());
+                    number.append(exp.charAt(i));
+                    if (!isDigit(exp.charAt(i + 1))) {
+                        Node node = new Node(Integer.parseInt(number.toString()));
+                        stack.push(node);
+                    }
+                } else if (isDigit(exp.charAt(i - 1))) {
+                    number.append(exp.charAt(i));
+                } else if (exp.charAt(i + 1) == -1) {
+                    Node node = new Node(Integer.parseInt(number.toString()));
+                    stack.push(node);
+                }
 
-            if (isOperation(exp.charAt(i))) {
+            } else if (isOperation(exp.charAt(i))) {
                 Node node = new Node(exp.charAt(i));
                 stack.push(node);
-            }
-
-            if (isClosingParenthesis(exp.charAt(i))) {
+            } else if (isClosingParenthesis(exp.charAt(i))) {
+                Node n2 = stack.pop();
                 Node n = stack.pop();
                 Node n1 = stack.pop();
-                Node n2 = stack.pop();
                 n.setNextLeft(n1);
                 n.setNextRight(n2);
                 stack.push(n);
             }
 
         }
+
         return stack.pop();
     }
 
@@ -125,16 +139,30 @@ public class TreeBuilder implements TreeBuilderIF {
 
     /**
      * @pre -
+     * @post Return true si le caractère est '('
+     * False sinon
+     */
+    private static boolean isOpeningParenthesis(char c) {
+        if (c == '(') {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @pre -
      * @post Return true si le caractère est un chiffre
      * false sinon
      */
     private static boolean isDigit(char c) {
-        if (c <= 9) {
+        if (Character.getNumericValue(c) <= 9 && Character.getNumericValue(c) >= 0) {
             return true;
         }
         return false;
     }
 
     public static void main(String[] args) {
+        TreeBuilder tb = new TreeBuilder("( 4 - 2 )");
+        tb.build();
     }
 }
