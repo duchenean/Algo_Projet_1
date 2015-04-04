@@ -2,7 +2,7 @@
 
 
 ### To do list : Programme
-1. ~~Implémenter l'interface TreeBuilderIF => Voir annexe : buildExpressionTree ~~
+1. ~~Implémenter l'interface TreeBuilderIF => Voir annexe : buildExpressionTree~~
 2. ~~Implémenter l'interface ExprIF~~
   - ~~getReducedTree()~~
   - ~~toString()~~
