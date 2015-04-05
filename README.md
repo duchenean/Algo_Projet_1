@@ -1,17 +1,17 @@
 ##Manipulation d’expressions arithmétiques 
-## -- MàJ 05/04/2015 02:30
+## -- MàJ 05/04/2015 03:30
 
 
 ### To do list : Programme
 1. ~~Implémenter l'interface TreeBuilderIF => Voir annexe : buildExpressionTree~~
 2. ~~Implémenter l'interface ExprIF~~
   - ~~getReducedTree()~~ 
-  - toString()
+  - toString() **/!\**
 3. Tester les 2 implémentations 
 4. ~~Implémenter l'algorithme récursif, parcourant l'AST~~
 5. ~~Implémenter la résolution de l'AST~~ 
 6. Tester la résolution de l'expression mathématique
-7. Implémenter la classe Main, permettant d'entrer des arguments en paramètre
+7. ~~Implémenter la classe Main, permettant d'entrer des arguments en paramètre~~
 8. Tester le programme et les performances
 9. Effectuer des optimisations au niveau de l'expression mathématique
   - Simplifications *évidentes* => 1*a = a ; 0+a = a ; ...
