@@ -1,10 +1,11 @@
-##Manipulation d’expressions arithmétiques
+##Manipulation d’expressions arithmétiques 
+## -- MàJ 05/04/2015 02:30
 
 
 ### To do list : Programme
 1. ~~Implémenter l'interface TreeBuilderIF => Voir annexe : buildExpressionTree~~
 2. ~~Implémenter l'interface ExprIF~~
-  - getReducedTree() ==> **Je ne sais pas ce qu'il veut faire avec cette méthode...**
+  - ~~getReducedTree()~~ 
   - toString()
 3. Tester les 2 implémentations 
 4. ~~Implémenter l'algorithme récursif, parcourant l'AST~~
