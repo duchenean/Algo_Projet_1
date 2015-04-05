@@ -5,6 +5,7 @@ package exprTree;
  * Package : exprTree
  * Antoine Duchêne. 4/04/15
  */
+
 public class Expr implements ExprIF {
     private Expr nextLeft;
     private Expr nextRight;
@@ -65,22 +66,18 @@ public class Expr implements ExprIF {
             if (content.equals("+")) {
                 Double newExpr = Double.parseDouble(nextLeft.getContent()) + Double.parseDouble(nextRight.getContent());
                 content = newExpr.toString();
-                //System.out.println(content);
             }
             if (content.equals("*")) {
                 Double newExpr = Double.parseDouble(nextLeft.getContent()) * Double.parseDouble(nextRight.getContent());
                 content = newExpr.toString();
-                //System.out.println(content);
             }
             if (content.equals("/")) {
                 Double newExpr = Double.parseDouble(nextLeft.getContent()) / Double.parseDouble(nextRight.getContent());
                 content = newExpr.toString();
-                //System.out.println(content);
             }
             if (content.equals("-")) {
                 Double newExpr = Double.parseDouble(nextLeft.getContent()) - Double.parseDouble(nextRight.getContent());
                 content = newExpr.toString();
-                //System.out.println(content);
             }
         }
         return this;

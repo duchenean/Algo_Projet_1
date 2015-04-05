@@ -2,7 +2,6 @@ package builder;
 
 import exprTree.Expr;
 import exprTree.ExprIF;
-
 import java.util.Stack;
 
 /**
@@ -10,6 +9,7 @@ import java.util.Stack;
  * Package : builder
  * Antoine Duchêne. 3/04/15
  */
+
 public class TreeBuilder implements TreeBuilderIF {
     Expr root;
     String exp;
@@ -25,7 +25,6 @@ public class TreeBuilder implements TreeBuilderIF {
 
     @Override
     public ExprIF build() {
-
         Stack<Expr> stack = new Stack<Expr>();
         for (int i = 0; i < exp.length(); i++) {
             if (isDigit(exp.charAt(i))) {
@@ -103,42 +102,10 @@ public class TreeBuilder implements TreeBuilderIF {
         return false;
     }
 
-    public static void postOrder(Expr root) {
-        if (root == null) {
-            return;
-        }
-        postOrder(root.getNextLeft());
-        postOrder(root.getNextRight());
-        if (root.toString().equals("+")) {
-            Double newExpr = Double.parseDouble(root.getNextLeft().toString()) + Double.parseDouble(root.getNextRight().toString());
-            root.setContent(newExpr.toString());
-            //System.out.println(root);
-        }
-        if (root.toString().equals("*")) {
-            Double newExpr = Double.parseDouble(root.getNextLeft().toString()) * Double.parseDouble(root.getNextRight().toString());
-            root.setContent(newExpr.toString());
-            //System.out.println(root);
-        }
-        if (root.toString().equals("/")) {
-            Double newExpr = Double.parseDouble(root.getNextLeft().toString()) / Double.parseDouble(root.getNextRight().toString());
-            root.setContent(newExpr.toString());
-            //System.out.println(root);
-        }
-        if (root.toString().equals("-")) {
-            Double newExpr = Double.parseDouble(root.getNextLeft().toString()) - Double.parseDouble(root.getNextRight().toString());
-            root.setContent(newExpr.toString());
-            //System.out.println(root);
-        }
-        if (root.getParent() == null) {
-            System.out.println("Résultat : " + root);
-        }
-    }
-
     public static void main(String[] args) {
-        TreeBuilder tree = new TreeBuilder("( ( 2 + 2 ) * ( 3 - 4 ) )");
+        //EXEMPLE DE FONCTIONNEMENT
+        TreeBuilder tree = new TreeBuilder("( ( 2 + 5 ) * ( 3 - 5 ) )");
         Expr root = (Expr) tree.build();
         System.out.println(root.getReducedTree());
-
-
     }
 }
