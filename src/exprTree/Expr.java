@@ -53,13 +53,37 @@ public class Expr implements ExprIF {
         return nextRight;
     }
 
-    public Object getContent() {
+    public String getContent() {
         return content;
     }
 
     @Override
     public ExprIF getReducedTree() {
-        return null;
+        if (nextRight != null && nextLeft != null) {
+            nextLeft.getReducedTree();
+            nextRight.getReducedTree();
+            if (content.equals("+")) {
+                Double newExpr = Double.parseDouble(nextLeft.getContent()) + Double.parseDouble(nextRight.getContent());
+                content = newExpr.toString();
+                //System.out.println(content);
+            }
+            if (content.equals("*")) {
+                Double newExpr = Double.parseDouble(nextLeft.getContent()) * Double.parseDouble(nextRight.getContent());
+                content = newExpr.toString();
+                //System.out.println(content);
+            }
+            if (content.equals("/")) {
+                Double newExpr = Double.parseDouble(nextLeft.getContent()) / Double.parseDouble(nextRight.getContent());
+                content = newExpr.toString();
+                //System.out.println(content);
+            }
+            if (content.equals("-")) {
+                Double newExpr = Double.parseDouble(nextLeft.getContent()) - Double.parseDouble(nextRight.getContent());
+                content = newExpr.toString();
+                //System.out.println(content);
+            }
+        }
+        return this;
     }
 
     @Override

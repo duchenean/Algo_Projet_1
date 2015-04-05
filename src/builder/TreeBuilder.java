@@ -1,5 +1,6 @@
 package builder;
 
+import exprTree.Expr;
 import exprTree.ExprIF;
 
 import java.util.Stack;
@@ -10,61 +11,7 @@ import java.util.Stack;
  * Antoine Duchêne. 3/04/15
  */
 public class TreeBuilder implements TreeBuilderIF {
-
-    private class Node implements ExprIF {
-        private Node nextLeft;
-        private Node nextRight;
-        private Object content;
-
-        public Node(Object content, Node nextLeft, Node nextRight) {
-            this.content = content;
-            this.nextLeft = nextLeft;
-            this.nextRight = nextRight;
-        }
-
-        public Node(Object content) {
-            this.content = content;
-        }
-
-        public Node() {
-        }
-
-        public void setContent(Object content) {
-            this.content = content;
-        }
-
-        public void setNextLeft(Node nextLeft) {
-            this.nextLeft = nextLeft;
-        }
-
-        public void setNextRight(Node nextRight) {
-            this.nextRight = nextRight;
-        }
-
-        public Node getNextLeft() {
-            return nextLeft;
-        }
-
-        public Node getNextRight() {
-            return nextRight;
-        }
-
-        public Object getContent() {
-            return content;
-        }
-
-        @Override
-        public ExprIF getReducedTree() {
-            return null;
-        }
-
-        @Override
-        public String toString() {
-            return content.toString();
-        }
-    }
-
-    Node root;
+    Expr root;
     String exp;
 
     /**
@@ -79,31 +26,33 @@ public class TreeBuilder implements TreeBuilderIF {
     @Override
     public ExprIF build() {
 
-        Stack<Node> stack = new Stack<Node>();
+        Stack<Expr> stack = new Stack<Expr>();
         for (int i = 0; i < exp.length(); i++) {
-            StringBuilder number = new StringBuilder();
             if (isDigit(exp.charAt(i))) {
+                StringBuilder number = new StringBuilder();
                 while (isDigit(exp.charAt(i))) {
+                    //Tant que le nombre n'est pas fini
                     number.append(exp.charAt(i));
                     i++;
                 }
-                Node node = new Node(Integer.parseInt(number.toString()));
-                stack.push(node);
+                Expr Expr = new Expr(number.toString());
+                stack.push(Expr);
             } else if (isOperation(exp.charAt(i))) {
-                Node node = new Node(exp.charAt(i));
-                stack.push(node);
+                Expr Expr = new Expr(Character.toString(exp.charAt(i)));
+                stack.push(Expr);
             } else if (isClosingParenthesis(exp.charAt(i))) {
-                Node n2 = stack.pop();
-                Node n = stack.pop();
-                Node n1 = stack.pop();
+                Expr n2 = stack.pop();
+                Expr n = stack.pop();
+                Expr n1 = stack.pop();
+                n1.setParent(n);
+                n2.setParent(n);
                 n.setNextLeft(n1);
                 n.setNextRight(n2);
                 stack.push(n);
             }
 
         }
-
-        return stack.pop();
+        return stack.pop(); // Retourne la racine de l'AST
     }
 
     /**
@@ -148,18 +97,48 @@ public class TreeBuilder implements TreeBuilderIF {
      * false sinon
      */
     private static boolean isDigit(char c) {
-        if (Character.getNumericValue(c) <= 9 && Character.getNumericValue(c) >= 0) {
+        if ((Character.getNumericValue(c) <= 9 && Character.getNumericValue(c) >= 0) || c == '.') {
             return true;
         }
         return false;
     }
 
+    public static void postOrder(Expr root) {
+        if (root == null) {
+            return;
+        }
+        postOrder(root.getNextLeft());
+        postOrder(root.getNextRight());
+        if (root.toString().equals("+")) {
+            Double newExpr = Double.parseDouble(root.getNextLeft().toString()) + Double.parseDouble(root.getNextRight().toString());
+            root.setContent(newExpr.toString());
+            //System.out.println(root);
+        }
+        if (root.toString().equals("*")) {
+            Double newExpr = Double.parseDouble(root.getNextLeft().toString()) * Double.parseDouble(root.getNextRight().toString());
+            root.setContent(newExpr.toString());
+            //System.out.println(root);
+        }
+        if (root.toString().equals("/")) {
+            Double newExpr = Double.parseDouble(root.getNextLeft().toString()) / Double.parseDouble(root.getNextRight().toString());
+            root.setContent(newExpr.toString());
+            //System.out.println(root);
+        }
+        if (root.toString().equals("-")) {
+            Double newExpr = Double.parseDouble(root.getNextLeft().toString()) - Double.parseDouble(root.getNextRight().toString());
+            root.setContent(newExpr.toString());
+            //System.out.println(root);
+        }
+        if (root.getParent() == null) {
+            System.out.println("Résultat : " + root);
+        }
+    }
+
     public static void main(String[] args) {
-        TreeBuilder tree = new TreeBuilder("( ( 57 + 478 ) * 89086 )");
-        Node root = (Node) tree.build();
-        System.out.println(root);
-        System.out.println(root.getNextLeft());
-        System.out.println(root.getNextRight());
+        TreeBuilder tree = new TreeBuilder("( ( 2 + 2 ) * ( 3 - 4 ) )");
+        Expr root = (Expr) tree.build();
+        System.out.println(root.getReducedTree());
+
 
     }
 }
