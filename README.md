@@ -1,6 +1,10 @@
 ##Manipulation d’expressions arithmétiques 
-## -- MàJ 05/04/2015 03:30
-
+## -- MàJ 05/04/2015 4:00
+> Note de MàJ : 
+> Le programme est **opérationnel**, Je l'ai testé dans des *main*. Reste encore à 
+> lui faire passer les tests unitaires mais je suis assez confiant, il les passera.
+> Du coup, il reste : Les tests unitaires, reformater le code (le rendre *clean*),
+> Implémenter le toString() (ça devrait être très simple...) et faire le rapport
 
 ### To do list : Programme
 1. ~~Implémenter l'interface TreeBuilderIF => Voir annexe : buildExpressionTree~~
