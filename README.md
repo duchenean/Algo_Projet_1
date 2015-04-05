@@ -4,11 +4,11 @@
 ### To do list : Programme
 1. ~~Implémenter l'interface TreeBuilderIF => Voir annexe : buildExpressionTree~~
 2. ~~Implémenter l'interface ExprIF~~
-  - ~~getReducedTree()~~
-  - ~~toString()~~
+  - getReducedTree() ==> **Je ne sais pas ce qu'il veut faire avec cette méthode...**
+  - toString()
 3. Tester les 2 implémentations 
-4. Implémenter l'algorithme récursif, parcourant l'AST 
-5. Implémenter la résolution de l'AST 
+4. ~~Implémenter l'algorithme récursif, parcourant l'AST~~
+5. ~~Implémenter la résolution de l'AST~~ 
 6. Tester la résolution de l'expression mathématique
 7. Implémenter la classe Main, permettant d'entrer des arguments en paramètre
 8. Tester le programme et les performances
