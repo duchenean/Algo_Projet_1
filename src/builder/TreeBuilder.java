@@ -3,6 +3,7 @@ package builder;
 import exprTree.Expr;
 import exprTree.ExprIF;
 
+import java.util.Scanner;
 import java.util.Stack;
 
 /**
@@ -124,8 +125,11 @@ public class TreeBuilder implements TreeBuilderIF {
 
     public static void main(String[] args) {
         //EXEMPLE DE FONCTIONNEMENT
-        TreeBuilder tree = new TreeBuilder("9.77");
+        TreeBuilder tree = new TreeBuilder("( ( 2 + 2 ) * ( 9 - 8 ) )");
         Expr root = (Expr) tree.build();
-        System.out.println(root.getReducedTree());
+        Expr res = (Expr) root.getReducedTree();
+        System.out.println(res.toString());
+
+
     }
 }

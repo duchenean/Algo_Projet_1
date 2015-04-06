@@ -1,5 +1,9 @@
 package exprTree;
 
+
+import java.util.Locale;
+import java.util.Scanner;
+
 /**
  * Project : Algo_Projet_1
  * Package : exprTree
@@ -12,9 +16,9 @@ public class Expr implements ExprIF {
     private Expr parent;
     private String content;
 
-    public Expr(String content, Expr parent, Expr nextLeft, Expr nextRight) {
+
+    public Expr(String content, Expr nextLeft, Expr nextRight) {
         this.content = content;
-        this.parent = parent;
         this.nextLeft = nextLeft;
         this.nextRight = nextRight;
     }
@@ -58,6 +62,18 @@ public class Expr implements ExprIF {
         return content;
     }
 
+    public static boolean isDouble(String s) {
+        Scanner sc = new Scanner(s);
+        sc.useLocale(Locale.US);
+        return sc.hasNextDouble();
+    }
+
+    public static double toDouble(String s) {
+        Scanner sc = new Scanner(s);
+        sc.useLocale(Locale.US);
+        return sc.nextDouble();
+    }
+
     @Override
     public ExprIF getReducedTree() {
         if (nextRight != null && nextLeft != null) {
@@ -85,7 +101,23 @@ public class Expr implements ExprIF {
 
     @Override
     public String toString() {
-        return content;
+        if (nextRight != null && nextLeft != null) {
+            nextLeft.toString();
+            nextRight.toString();
+            if (!isDouble(nextRight.getContent()) && !isDouble(nextLeft.getContent())) {
+                content = "(" + nextLeft.getContent() + this.getContent() + nextRight.getContent() + ")";
+            }
+            if (isDouble(nextRight.getContent()) && !isDouble(nextLeft.getContent())) {
+                content = "(" + nextLeft.getContent() + this.getContent() + toDouble(nextRight.getContent()) + ")";
+            }
+            if (!isDouble(nextRight.getContent()) && isDouble(nextLeft.getContent())) {
+                content = "(" + toDouble(nextLeft.getContent()) + this.getContent() + nextRight.getContent() + ")";
+            }
+            if (isDouble(nextRight.getContent()) && isDouble(nextLeft.getContent())) {
+                content = "(" + toDouble(nextLeft.getContent()) + this.getContent() + toDouble(nextRight.getContent()) + ")";
+            }
+        }
+        return this.content;
     }
 }
 
