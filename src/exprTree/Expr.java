@@ -16,7 +16,6 @@ public class Expr implements ExprIF {
     private Expr parent;
     private String content;
 
-
     public Expr(String content, Expr nextLeft, Expr nextRight) {
         this.content = content;
         this.nextLeft = nextLeft;
@@ -101,23 +100,17 @@ public class Expr implements ExprIF {
 
     @Override
     public String toString() {
-        if (nextRight != null && nextLeft != null) {
-            nextLeft.toString();
-            nextRight.toString();
-            if (!isDouble(nextRight.getContent()) && !isDouble(nextLeft.getContent())) {
-                content = "(" + nextLeft.getContent() + this.getContent() + nextRight.getContent() + ")";
-            }
-            if (isDouble(nextRight.getContent()) && !isDouble(nextLeft.getContent())) {
-                content = "(" + nextLeft.getContent() + this.getContent() + toDouble(nextRight.getContent()) + ")";
-            }
-            if (!isDouble(nextRight.getContent()) && isDouble(nextLeft.getContent())) {
-                content = "(" + toDouble(nextLeft.getContent()) + this.getContent() + nextRight.getContent() + ")";
-            }
-            if (isDouble(nextRight.getContent()) && isDouble(nextLeft.getContent())) {
-                content = "(" + toDouble(nextLeft.getContent()) + this.getContent() + toDouble(nextRight.getContent()) + ")";
-            }
+        String str = null;
+        if (nextRight == null && nextLeft == null) {
+            return content;
         }
-        return this.content;
+        if (nextRight != null && nextLeft != null) {
+            String str1 = nextLeft.toString();
+            String str2 = nextRight.toString();
+            str = "(" + str1 + content + str2 + ")";
+        }
+
+        return str;
     }
 }
 

@@ -127,8 +127,7 @@ public class TreeBuilder implements TreeBuilderIF {
         //EXEMPLE DE FONCTIONNEMENT
         TreeBuilder tree = new TreeBuilder("( ( 2 + 2 ) * ( 9 - 8 ) )");
         Expr root = (Expr) tree.build();
-        Expr res = (Expr) root.getReducedTree();
-        System.out.println(res.toString());
+        System.out.println(root.toString());
 
 
     }
