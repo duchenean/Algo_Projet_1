@@ -1,6 +1,3 @@
-/*
- * Exemple de test sans lecture et écriture des fichiers
- */
 
 import builder.TreeBuilder;
 import exprTree.ExprIF;
@@ -11,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
         //TODO meilleure gestion des exeptions (EX: messages d'erreurs etc...)
         try {
+            long before = System.currentTimeMillis();
             BufferedReader bufferedReader = new BufferedReader(new FileReader(args[0]));
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(args[1]));
             String line;

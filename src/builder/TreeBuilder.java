@@ -30,22 +30,18 @@ public class TreeBuilder implements TreeBuilderIF {
         for (int i = 0; i < exp.length(); i++) {
             if (isDigit(exp.charAt(i))) {
                 StringBuilder number = new StringBuilder();
-                //TODO Trouver une façon plus élégante qu'un try catch pour le cas où exp ne contient qu'un nombre
-                try {
-                    while (isDigit(exp.charAt(i))) {
-                        //Tant que le nombre n'est pas fini
-                        number.append(exp.charAt(i));
-                        i++;
-                    }
-                } catch (java.lang.StringIndexOutOfBoundsException e) {
-                    Expr Expr = new Expr(number.toString());
-                    stack.push(Expr);
+                while (i < exp.length() && isDigit(exp.charAt(i))) {
+                    //Tant que le nombre n'est pas fini
+                    number.append(exp.charAt(i));
+                    i++;
                 }
                 Expr Expr = new Expr(number.toString());
                 stack.push(Expr);
+
             } else if (isOperation(exp.charAt(i))) {
                 Expr Expr = new Expr(Character.toString(exp.charAt(i)));
                 stack.push(Expr);
+
             } else if (isClosingParenthesis(exp.charAt(i))) {
                 Expr n2 = stack.pop();
                 Expr n = stack.pop();
