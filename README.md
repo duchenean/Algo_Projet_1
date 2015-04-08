@@ -10,13 +10,15 @@
 ### Note pour Justin
 Tu fais le diagramme des classes. C'est pas trop compliqué :
 
- 1. Tu lis toutes mes classes
- 2. Tu regardes qui implémente quoi, qui hérite de quoi, qui est utilisé dans quoi, et ainsi de suite...
- 3. Tu dessines le **diagramme UML /!\** sur une feuille en papier
+ 1. Tu *pull* les nouvelles révisions
+ 2. Tu lis toutes mes classes
+ 3. Tu regardes qui implémente quoi, qui hérite de quoi, qui est utilisé dans quoi, et ainsi de suite...
+ 4. Tu dessines le **diagramme UML /!\** sur une feuille en papier
  
       > (Voir Google, OpenClassroom pour les conventions de style)
- 4. Puis avec le logiciel que tu veux (Illustrator, M$oft Visio, ...), tu refais ça au propre à l'ordi
+ 5. Puis avec le logiciel que tu veux (Illustrator, M$oft Visio, ...), tu refais ça au propre à l'ordi
 
+**Deadline : Lundi 13 avril**
 
 Thanks !
 
