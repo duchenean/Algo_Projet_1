@@ -1,16 +1,32 @@
-##Manipulation d’expressions arithmétiques 
-## -- MàJ 05/04/2015 4:00
+## Manipulation d’expressions arithmétiques 
+### -- MàJ 08/04/2015 23:00 --
 > Note de MàJ : 
-> Le programme est **opérationnel**, Je l'ai testé dans des *main*. Reste encore à 
-> lui faire passer les tests unitaires mais je suis assez confiant, il les passera.
-> Du coup, il reste : Les tests unitaires, reformater le code (le rendre *clean*),
-> Implémenter le toString() (ça devrait être très simple...) et faire le rapport
+> L'architecture du programme est maintenant correcte ! Le fichier .out est au bon format, getReducedTree() se somporte
+> presque comme prévu (encore quelques modifs à faire au niveau de l'ordre de la simplification) mais sinon c'est nickel.
+> J'ai passé les tests sur *ingénious*, tout est bon sauf l'ordre des simplifications, pas trop grave en soit... 
+> **Il reste** donc : Les tests unitaires, reformater **(encore !)** le code (le rendre *clean*),
+> faire le rapport. 
+
+### Note pour Justin
+Tu fais le diagramme des classes. C'est pas trop compliqué :
+
+ 1. Tu *pull* les nouvelles révisions
+ 2. Tu lis toutes mes classes
+ 3. Tu regardes qui implémente quoi, qui hérite de quoi, qui est utilisé dans quoi, et ainsi de suite...
+ 4. Tu dessines le **diagramme UML /!\** sur une feuille en papier
+ 
+      > (Voir Google, OpenClassroom pour les conventions de style)
+ 5. Puis avec le logiciel que tu veux (Illustrator, M$oft Visio, ...), tu refais ça au propre à l'ordi
+
+**Deadline : Lundi 13 avril**
+
+Thanks !
 
 ### To do list : Programme
 1. ~~Implémenter l'interface TreeBuilderIF => Voir annexe : buildExpressionTree~~
 2. ~~Implémenter l'interface ExprIF~~
   - ~~getReducedTree()~~ 
-  - toString() **/!\**
+  - ~~toString()~~
 3. Tester les 2 implémentations 
 4. ~~Implémenter l'algorithme récursif, parcourant l'AST~~
 5. ~~Implémenter la résolution de l'AST~~ 
@@ -40,7 +56,7 @@
 - ~~La classe qui crée l’AST à partir d’une expression s’appelle *TreeBuilder*. Elle implémente l’interface *TreeBuilderIF* et se trouve dans le package *builder*.~~
 - ~~Le constructeur de *TreeBuilder* prend **un String** qui représente l’expression arithmétique.~~
 - ~~Les opérateurs sont **+, -, * et /.**~~
-- ~~*getReducedTree*, simplifie l’arbre courant (en renvoyant un arbre simplifié), ou sa/ses méthode(s) auxiliaire(s) pour réaliser cette opération,~~ ainsi que la méthode toString, qui permet de convertir un arbre en une expression complètement parenthésée sous forme de String, **sont à appeler de manière récursive (utiliser un parcours adéquat).**
+- ~~*getReducedTree*, simplifie l’arbre courant (en renvoyant un arbre simplifié), ou sa/ses méthode(s) auxiliaire(s) pour réaliser cette opération, ainsi que la méthode toString, qui permet de convertir un arbre en une expression complètement parenthésée sous forme de String, sont à appeler de manière récursive (utiliser un parcours adéquat).~~
 
 >  /!\ LE CODE DOIT ÊTRE CLAIR ET FACILEMENT MAINTENABLE
 
