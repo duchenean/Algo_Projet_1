@@ -1,5 +1,5 @@
-##Manipulation d’expressions arithmétiques 
-## -- MàJ 08/04/2015 23:00
+## Manipulation d’expressions arithmétiques 
+### -- MàJ 08/04/2015 23:00 --
 > Note de MàJ : 
 > L'architecture du programme est maintenant correcte ! Le fichier .out est au bon format, getReducedTree() se somporte
 > presque comme prévu (encore quelques modifs à faire au niveau de l'ordre de la simplification) mais sinon c'est nickel.
@@ -7,7 +7,9 @@
 > **Il reste** donc : Les tests unitaires, reformater **(encore !)** le code (le rendre *clean*),
 > faire le rapport. 
 
-**Note pour Justin :** Tu fais le diagramme des classes. C'est pas trop compliqué :
+### Note pour Justin
+Tu fais le diagramme des classes. C'est pas trop compliqué :
+
  1. Tu lis toutes mes classes
  2. Tu regardes qui implémente quoi, qui hérite de quoi, qui est utilisé dans quoi, et ainsi de suite...
  3. Tu dessines le **diagramme UML /!\** sur une feuille en papier
