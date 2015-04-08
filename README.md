@@ -1,10 +1,22 @@
 ##Manipulation d’expressions arithmétiques 
-## -- MàJ 05/04/2015 4:00
+## -- MàJ 08/04/2015 23:00
 > Note de MàJ : 
-> Le programme est **opérationnel**, Je l'ai testé dans des *main*. Reste encore à 
-> lui faire passer les tests unitaires mais je suis assez confiant, il les passera.
-> Du coup, il reste : Les tests unitaires, reformater le code (le rendre *clean*),
-> Implémenter le toString() (ça devrait être très simple...) et faire le rapport
+> L'architecture du programme est maintenant correcte ! Le fichier .out est au bon format, getReducedTree() se somporte
+> presque comme prévu (encore quelques modifs à faire au niveau de l'ordre de la simplification) mais sinon c'est nickel.
+> J'ai passé les tests sur *ingénious*, tout est bon sauf l'ordre des simplifications, pas trop grave en soit... 
+> **Il reste** donc : Les tests unitaires, reformater **(encore !)** le code (le rendre *clean*),
+> faire le rapport. 
+
+**Note pour Justin :** Tu fais le diagramme des classes. C'est pas trop compliqué :
+ 1. Tu lis toutes mes classes
+ 2. Tu regardes qui implémente quoi, qui hérite de quoi, qui est utilisé dans quoi, et ainsi de suite...
+ 3. Tu dessines le **diagramme UML /!\** sur une feuille en papier
+ 
+      > (Voir Google, OpenClassroom pour les conventions de style)
+ 4. Puis avec le logiciel que tu veux (Illustrator, M$oft Visio, ...), tu refais ça au propre à l'ordi
+
+
+Thanks !
 
 ### To do list : Programme
 1. ~~Implémenter l'interface TreeBuilderIF => Voir annexe : buildExpressionTree~~
