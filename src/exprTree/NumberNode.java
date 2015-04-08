@@ -6,7 +6,7 @@ package exprTree;
  * Package : exprTree
  * Antoine Duchêne. 4/04/15
  */
-public class NumberNode extends Node2 {
+public class NumberNode extends Node {
 
     double number;
 
@@ -14,7 +14,7 @@ public class NumberNode extends Node2 {
         this.number = number;
     }
 
-    public NumberNode(Node2 leftNode, Node2 rightNode, double number) {
+    public NumberNode(Node leftNode, Node rightNode, double number) {
         super(leftNode, rightNode);
         this.number = number;
     }

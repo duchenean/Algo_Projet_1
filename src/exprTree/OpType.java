@@ -20,7 +20,7 @@ public enum OpType {
     }
 
 
-    public double compute(Node2 leftNode, Node2 rightNode) {
+    public double compute(Node leftNode, Node rightNode) {
         switch (this) {
             case MUL:
                 return leftNode.eval() * rightNode.eval();

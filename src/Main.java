@@ -1,7 +1,6 @@
 
-import builder.TreeBuilder2;
-import exprTree.ExprTree2;
-import exprTree.Node2;
+import builder.TreeBuilder;
+import exprTree.ExprTree;
 
 import java.io.*;
 
@@ -13,8 +12,8 @@ public class Main {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(args[1]));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                TreeBuilder2 treeBuilder2 = new TreeBuilder2(line);
-                ExprTree2 tree = (ExprTree2) treeBuilder2.build();
+                TreeBuilder treeBuilder = new TreeBuilder(line);
+                ExprTree tree = (ExprTree) treeBuilder.build();
                 String printedLine = tree.solve();
                 bufferedWriter.write(printedLine);
                 System.out.println(printedLine);

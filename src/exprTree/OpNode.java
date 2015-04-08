@@ -3,10 +3,10 @@ package exprTree;
 /**
  * Created by Antoine on 08/04/2015.
  */
-public class OpNode extends Node2 {
+public class OpNode extends Node {
     OpType type;
 
-    public OpNode(Node2 leftNode, Node2 rightNode, OpType type) {
+    public OpNode(Node leftNode, Node rightNode, OpType type) {
         super(leftNode, rightNode);
         this.type = type;
     }

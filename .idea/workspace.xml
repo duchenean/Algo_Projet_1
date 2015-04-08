@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec149477-969e-441e-abef-932fda4dd9d9" name="Default" comment="toString() done but incompatible w/ getReducedTree()&#10;Have to rework that...">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/exprTree/Node2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/exprTree/NumberNode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/exprTree/OpNode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/exprTree/OpType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/builder/TreeBuilder2.java" />
-      <change type="DELETED" beforePath="C:\Users\Antoine\IdeaProjects\Algo_Projet_1\src\builder\TreeBuilder.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Antoine\IdeaProjects\Algo_Projet_1\src\exprTree\Expr.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Antoine\IdeaProjects\Algo_Projet_1\src\UnitTests\ExprTest.java" afterPath="$PROJECT_DIR$/src/UnitTests/NodeTest.java" />
+    <list default="true" id="ec149477-969e-441e-abef-932fda4dd9d9" name="Default" comment="New design...">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/exprTree/ExprTree.java" />
+      <change type="MOVED" beforePath="C:\Users\Antoine\IdeaProjects\Algo_Projet_1\src\builder\TreeBuilder2.java" afterPath="$PROJECT_DIR$/src/builder/TreeBuilder.java" />
+      <change type="MOVED" beforePath="C:\Users\Antoine\IdeaProjects\Algo_Projet_1\src\exprTree\Node2.java" afterPath="$PROJECT_DIR$/src/exprTree/Node.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exprs.in" afterPath="$PROJECT_DIR$/exprs.in" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exprs.out" afterPath="$PROJECT_DIR$/exprs.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/exprTree/NumberNode.java" afterPath="$PROJECT_DIR$/src/exprTree/NumberNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/exprTree/OpNode.java" afterPath="$PROJECT_DIR$/src/exprTree/OpNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/exprTree/OpType.java" afterPath="$PROJECT_DIR$/src/exprTree/OpType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Algo_Projet_1.iws" />
@@ -51,14 +46,14 @@
                 <state vertical-scroll-proportion="0.0">
                   <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
                   <folding>
-                    <element signature="e#203#204#0" expanded="true" />
-                    <element signature="e#239#240#0" expanded="true" />
-                    <element signature="e#428#429#0" expanded="true" />
-                    <element signature="e#464#465#0" expanded="true" />
-                    <element signature="e#510#511#0" expanded="true" />
-                    <element signature="e#556#557#0" expanded="true" />
-                    <element signature="e#598#599#0" expanded="true" />
-                    <element signature="e#627#628#0" expanded="true" />
+                    <element signature="e#202#203#0" expanded="true" />
+                    <element signature="e#238#239#0" expanded="true" />
+                    <element signature="e#425#426#0" expanded="true" />
+                    <element signature="e#461#462#0" expanded="true" />
+                    <element signature="e#507#508#0" expanded="true" />
+                    <element signature="e#553#554#0" expanded="true" />
+                    <element signature="e#595#596#0" expanded="true" />
+                    <element signature="e#624#625#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -68,7 +63,7 @@
             <entry file="file://$PROJECT_DIR$/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+                  <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -82,37 +77,37 @@
                 <state vertical-scroll-proportion="0.0">
                   <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
                   <folding>
-                    <element signature="e#722#723#0" expanded="true" />
-                    <element signature="e#778#779#0" expanded="true" />
+                    <element signature="e#719#720#0" expanded="true" />
+                    <element signature="e#775#776#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TreeBuilder2.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/builder/TreeBuilder2.java">
+          <file leaf-file-name="TreeBuilder.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/builder/TreeBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
                   <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
                   <folding>
-                    <element signature="e#435#436#0" expanded="true" />
-                    <element signature="e#465#466#0" expanded="true" />
-                    <element signature="e#548#555#0" expanded="true" />
+                    <element signature="e#433#434#0" expanded="true" />
+                    <element signature="e#463#464#0" expanded="true" />
+                    <element signature="e#545#551#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ExprTree2.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/exprTree/ExprTree2.java">
+          <file leaf-file-name="ExprTree.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/exprTree/ExprTree.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6103896">
+                <state vertical-scroll-proportion="0.752">
                   <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
                   <folding>
-                    <element signature="e#268#269#0" expanded="true" />
-                    <element signature="e#300#301#0" expanded="true" />
-                    <element signature="e#336#337#0" expanded="true" />
-                    <element signature="e#368#369#0" expanded="true" />
+                    <element signature="e#264#265#0" expanded="true" />
+                    <element signature="e#296#297#0" expanded="true" />
+                    <element signature="e#330#331#0" expanded="true" />
+                    <element signature="e#362#363#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -122,14 +117,14 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="Node2.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/exprTree/Node2.java">
+          <file leaf-file-name="Node.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/exprTree/Node.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5200216">
+                <state vertical-scroll-proportion="0.64066666">
                   <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
                   <folding>
-                    <element signature="e#630#631#0" expanded="true" />
-                    <element signature="e#662#663#0" expanded="true" />
+                    <element signature="e#619#620#0" expanded="true" />
+                    <element signature="e#651#652#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -189,7 +184,6 @@
         <option value="$PROJECT_DIR$/src/exprTree/OpType.java" />
         <option value="$PROJECT_DIR$/src/exprTree/exprTree2.java" />
         <option value="$PROJECT_DIR$/src/exprTree/OpNode.java" />
-        <option value="$PROJECT_DIR$/src/exprTree/ExprTree.java" />
         <option value="$PROJECT_DIR$/src/exprTree/NumberNode.java" />
         <option value="$PROJECT_DIR$/src/builder/TreeBuilder2.java" />
         <option value="$PROJECT_DIR$/exprs.out" />
@@ -198,6 +192,7 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/exprTree/Node.java" />
         <option value="$PROJECT_DIR$/src/exprTree/ExprTree2.java" />
+        <option value="$PROJECT_DIR$/src/exprTree/ExprTree.java" />
       </list>
     </option>
   </component>
@@ -457,14 +452,14 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="TreeBuilder2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="TreeBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="builder.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="builder.TreeBuilder2" />
+      <option name="MAIN_CLASS_NAME" value="builder.TreeBuilder" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -477,14 +472,14 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="ExprTree2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ExprTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="exprTree.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="exprTree.ExprTree2" />
+      <option name="MAIN_CLASS_NAME" value="exprTree.ExprTree" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -798,14 +793,14 @@
       <item index="0" class="java.lang.String" itemvalue="Application.TreeBuilder" />
       <item index="1" class="java.lang.String" itemvalue="Application.Main" />
       <item index="2" class="java.lang.String" itemvalue="Application.OpNode" />
-      <item index="3" class="java.lang.String" itemvalue="Application.TreeBuilder2" />
-      <item index="4" class="java.lang.String" itemvalue="Application.ExprTree2" />
+      <item index="3" class="java.lang.String" itemvalue="Application.TreeBuilder" />
+      <item index="4" class="java.lang.String" itemvalue="Application.ExprTree" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ExprTree2" />
-        <item index="2" class="java.lang.String" itemvalue="Application.TreeBuilder2" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ExprTree" />
+        <item index="2" class="java.lang.String" itemvalue="Application.TreeBuilder" />
         <item index="3" class="java.lang.String" itemvalue="Application.TreeBuilder" />
         <item index="4" class="java.lang.String" itemvalue="Application.OpNode" />
       </list>
@@ -843,7 +838,7 @@
       <workItem from="1428439215749" duration="21000" />
       <workItem from="1428451866069" duration="636000" />
       <workItem from="1428497160428" duration="8850000" />
-      <workItem from="1428508411520" duration="16152000" />
+      <workItem from="1428508411520" duration="16867000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1427981806586</created>
@@ -947,11 +942,17 @@
       <option name="project" value="LOCAL" />
       <updated>1428354944868</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="New design...">
+      <created>1428527403871</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1428527403871</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65684000" />
+    <option name="totallyTimeSpent" value="66399000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -974,10 +975,10 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18393235" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18393235" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16444562" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16444562" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983023" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973348" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1053,7 +1054,8 @@
     <MESSAGE value="Better handling of single number in exprs.in" />
     <MESSAGE value="toString() done but incompatible w/ getReducedTree()&#10;Have to rework that..." />
     <MESSAGE value="New design" />
-    <option name="LAST_COMMIT_MESSAGE" value="New design" />
+    <MESSAGE value="New design..." />
+    <option name="LAST_COMMIT_MESSAGE" value="New design..." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1314,8 +1316,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
           <folding>
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
+            <element signature="e#719#720#0" expanded="true" />
+            <element signature="e#775#776#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1333,14 +1335,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/builder/TreeBuilder2.java">
+    <entry file="file://$PROJECT_DIR$/src/builder/TreeBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
           <folding>
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
-            <element signature="e#548#555#0" expanded="true" />
+            <element signature="e#433#434#0" expanded="true" />
+            <element signature="e#463#464#0" expanded="true" />
+            <element signature="e#545#551#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1348,7 +1350,7 @@
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1360,38 +1362,38 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
           <folding>
-            <element signature="e#203#204#0" expanded="true" />
-            <element signature="e#239#240#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#556#557#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#627#628#0" expanded="true" />
+            <element signature="e#202#203#0" expanded="true" />
+            <element signature="e#238#239#0" expanded="true" />
+            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#507#508#0" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#624#625#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/exprTree/Node2.java">
+    <entry file="file://$PROJECT_DIR$/src/exprTree/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5200216">
+        <state vertical-scroll-proportion="0.64066666">
           <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
           <folding>
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#662#663#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/exprTree/ExprTree2.java">
+    <entry file="file://$PROJECT_DIR$/src/exprTree/ExprTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6103896">
+        <state vertical-scroll-proportion="0.752">
           <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
           <folding>
-            <element signature="e#268#269#0" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#368#369#0" expanded="true" />
+            <element signature="e#264#265#0" expanded="true" />
+            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#330#331#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
           </folding>
         </state>
       </provider>

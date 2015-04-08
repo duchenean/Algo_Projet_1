@@ -10,7 +10,7 @@ import java.util.Stack;
  * Antoine Duchêne. 3/04/15
  */
 
-public class TreeBuilder2 implements TreeBuilderIF {
+public class TreeBuilder implements TreeBuilderIF {
     private String exp;
 
     /**
@@ -18,13 +18,13 @@ public class TreeBuilder2 implements TreeBuilderIF {
      * de l'expression sont séparés par un espace.
      * @post Initialise l'AST
      */
-    public TreeBuilder2(String exp) {
+    public TreeBuilder(String exp) {
         this.exp = exp;
     }
 
     @Override
     public ExprIF build() {
-        Stack<Node2> stack = new Stack<Node2>();
+        Stack<Node> stack = new Stack<Node>();
         for (int i = 0; i < exp.length(); i++) {
             char currentChar = exp.charAt(i);
             if (isDigit(currentChar)) {
@@ -33,25 +33,25 @@ public class TreeBuilder2 implements TreeBuilderIF {
                     number.append(exp.charAt(i));
                     i++;
                 }
-                Node2 Node = new NumberNode(Double.parseDouble(number.toString()));
+                Node Node = new NumberNode(Double.parseDouble(number.toString()));
                 stack.push(Node);
 
             } else if (isOperation(currentChar)) {
 
-                Node2 Node = new OpNode(getOpType(currentChar));
+                Node Node = new OpNode(getOpType(currentChar));
                 stack.push(Node);
 
             } else if (isClosingParenthesis(currentChar)) {
-                Node2 rightNode = stack.pop();
-                Node2 root = stack.pop();
-                Node2 leftNode = stack.pop();
+                Node rightNode = stack.pop();
+                Node root = stack.pop();
+                Node leftNode = stack.pop();
                 root.setLeftNode(leftNode);
                 root.setRightNode(rightNode);
                 stack.push(root);
             }
 
         }
-        return new ExprTree2(stack.pop()); // Retourne la racine de l'AST
+        return new ExprTree(stack.pop()); // Retourne la racine de l'AST
     }
 
     /**

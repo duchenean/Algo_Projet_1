@@ -7,31 +7,31 @@ package exprTree;
  * Antoine Duchêne. 4/04/15
  */
 
-public abstract class Node2 {
-    protected Node2 leftNode;
-    protected Node2 rightNode;
+public abstract class Node {
+    protected Node leftNode;
+    protected Node rightNode;
 
-    public Node2(Node2 leftNode, Node2 rightNode) {
+    public Node(Node leftNode, Node rightNode) {
         this.leftNode = leftNode;
         this.rightNode = rightNode;
     }
 
-    public Node2() {
+    public Node() {
     }
 
-    public void setLeftNode(Node2 leftNode) {
+    public void setLeftNode(Node leftNode) {
         this.leftNode = leftNode;
     }
 
-    public void setRightNode(Node2 rightNode) {
+    public void setRightNode(Node rightNode) {
         this.rightNode = rightNode;
     }
 
-    public Node2 getLeftNode() {
+    public Node getLeftNode() {
         return leftNode;
     }
 
-    public Node2 getRightNode() {
+    public Node getRightNode() {
         return rightNode;
     }
 
