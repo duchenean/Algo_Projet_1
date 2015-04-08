@@ -14,7 +14,6 @@ public enum OpType {
     }
 
     private final char operation;
-
     OpType(char operation) {
         this.operation = operation;
     }

@@ -10,7 +10,6 @@ public class OpNode extends Node {
         super(leftNode, rightNode);
         this.type = type;
     }
-
     public OpNode(OpType type) {
         super(null, null);
         this.type = type;
