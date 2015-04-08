@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
  * Package : exprTree
  * Antoine Duchêne. 5/04/15
  */
-public class ExprTest {
+public class NodeTest {
 
     @Test
     public void testGetReducedTree() throws Exception {

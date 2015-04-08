@@ -1,7 +1,7 @@
 
-import builder.TreeBuilder;
-import exprTree.Expr;
-import exprTree.ExprIF;
+import builder.TreeBuilder2;
+import exprTree.ExprTree2;
+import exprTree.Node2;
 
 import java.io.*;
 
@@ -13,10 +13,11 @@ public class Main {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(args[1]));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                TreeBuilder tree = new TreeBuilder(line);
-                Expr root = (Expr) tree.build();
-                Expr solved = (Expr) root.getReducedTree(); //TODO utiliser la méthode toString()
-                bufferedWriter.write(solved.getContent());
+                TreeBuilder2 treeBuilder2 = new TreeBuilder2(line);
+                ExprTree2 tree = (ExprTree2) treeBuilder2.build();
+                String printedLine = tree.solve();
+                bufferedWriter.write(printedLine);
+                System.out.println(printedLine);
                 bufferedWriter.newLine();
                 bufferedWriter.flush();
             }
