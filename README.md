@@ -10,7 +10,7 @@
 1. ~~Implémenter l'interface TreeBuilderIF => Voir annexe : buildExpressionTree~~
 2. ~~Implémenter l'interface ExprIF~~
   - ~~getReducedTree()~~ 
-  - toString() **/!\**
+  - ~~toString()~~
 3. Tester les 2 implémentations 
 4. ~~Implémenter l'algorithme récursif, parcourant l'AST~~
 5. ~~Implémenter la résolution de l'AST~~ 
@@ -40,7 +40,7 @@
 - ~~La classe qui crée l’AST à partir d’une expression s’appelle *TreeBuilder*. Elle implémente l’interface *TreeBuilderIF* et se trouve dans le package *builder*.~~
 - ~~Le constructeur de *TreeBuilder* prend **un String** qui représente l’expression arithmétique.~~
 - ~~Les opérateurs sont **+, -, * et /.**~~
-- ~~*getReducedTree*, simplifie l’arbre courant (en renvoyant un arbre simplifié), ou sa/ses méthode(s) auxiliaire(s) pour réaliser cette opération,~~ ainsi que la méthode toString, qui permet de convertir un arbre en une expression complètement parenthésée sous forme de String, **sont à appeler de manière récursive (utiliser un parcours adéquat).**
+- ~~*getReducedTree*, simplifie l’arbre courant (en renvoyant un arbre simplifié), ou sa/ses méthode(s) auxiliaire(s) pour réaliser cette opération, ainsi que la méthode toString, qui permet de convertir un arbre en une expression complètement parenthésée sous forme de String, sont à appeler de manière récursive (utiliser un parcours adéquat).~~
 
 >  /!\ LE CODE DOIT ÊTRE CLAIR ET FACILEMENT MAINTENABLE
 
