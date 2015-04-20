@@ -7,32 +7,17 @@
 > **Il reste** donc : Les tests unitaires, reformater **(encore !)** le code (le rendre *clean*),
 > faire le rapport. 
 
-### Note pour Justin
-Tu fais le diagramme des classes. C'est pas trop compliqué :
-
- 1. Tu *pull* les nouvelles révisions
- 2. Tu lis toutes mes classes
- 3. Tu regardes qui implémente quoi, qui hérite de quoi, qui est utilisé dans quoi, et ainsi de suite...
- 4. Tu dessines le **diagramme UML /!\** sur une feuille en papier
- 
-      > (Voir Google, OpenClassroom pour les conventions de style)
- 5. Puis avec le logiciel que tu veux (Illustrator, M$oft Visio, ...), tu refais ça au propre à l'ordi
-
-**Deadline : Lundi 13 avril**
-
-Thanks !
-
 ### To do list : Programme
 1. ~~Implémenter l'interface TreeBuilderIF => Voir annexe : buildExpressionTree~~
 2. ~~Implémenter l'interface ExprIF~~
   - ~~getReducedTree()~~ 
   - ~~toString()~~
-3. Tester les 2 implémentations 
+3. ~~Tester les 2 implémentations~~
 4. ~~Implémenter l'algorithme récursif, parcourant l'AST~~
 5. ~~Implémenter la résolution de l'AST~~ 
-6. Tester la résolution de l'expression mathématique
+6. ~~Tester la résolution de l'expression mathématique~~
 7. ~~Implémenter la classe Main, permettant d'entrer des arguments en paramètre~~
-8. Tester le programme et les performances
+8. ~~Tester le programme et les performances~~
 9. Effectuer des optimisations au niveau de l'expression mathématique
   - Simplifications *évidentes* => 1*a = a ; 0+a = a ; ...
 10. Retester les performances 
