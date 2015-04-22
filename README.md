@@ -1,11 +1,11 @@
 ## Manipulation d’expressions arithmétiques 
-### -- MàJ 08/04/2015 23:00 --
+### -- MàJ 22/04/2015 23:00 --
 > Note de MàJ : 
 > L'architecture du programme est maintenant correcte ! Le fichier .out est au bon format, getReducedTree() se somporte
 > presque comme prévu (encore quelques modifs à faire au niveau de l'ordre de la simplification) mais sinon c'est nickel.
-> J'ai passé les tests sur *ingénious*, tout est bon sauf l'ordre des simplifications, pas trop grave en soit... 
+> J'ai passé les tests sur *ingénious*
 > **Il reste** donc : Les tests unitaires, reformater **(encore !)** le code (le rendre *clean*),
-> faire le rapport. 
+> terminer le rapport. 
 
 ### To do list : Programme
 1. ~~Implémenter l'interface TreeBuilderIF => Voir annexe : buildExpressionTree~~
@@ -24,8 +24,8 @@
 
 ### To do list : Rapport
 - Diagramme de classes
-- Choix d'implémentation
-- Complexité des différentes opérations des interfaces **TreeBuilderIF** & **ExprIF**
+- ~~Choix d'implémentation~~
+- ~~Complexité des différentes opérations des interfaces **TreeBuilderIF** & **ExprIF**~~
 - Difficultés rencontrées 
 
 ### Choix de l'implémentation de l'arbre 
