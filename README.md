@@ -1,46 +1,31 @@
 ## Manipulation d’expressions arithmétiques 
-### -- MàJ 08/04/2015 23:00 --
+### -- MàJ 22/04/2015 23:00 --
 > Note de MàJ : 
 > L'architecture du programme est maintenant correcte ! Le fichier .out est au bon format, getReducedTree() se somporte
 > presque comme prévu (encore quelques modifs à faire au niveau de l'ordre de la simplification) mais sinon c'est nickel.
-> J'ai passé les tests sur *ingénious*, tout est bon sauf l'ordre des simplifications, pas trop grave en soit... 
+> J'ai passé les tests sur *ingénious*
 > **Il reste** donc : Les tests unitaires, reformater **(encore !)** le code (le rendre *clean*),
-> faire le rapport. 
-
-### Note pour Justin
-Tu fais le diagramme des classes. C'est pas trop compliqué :
-
- 1. Tu *pull* les nouvelles révisions
- 2. Tu lis toutes mes classes
- 3. Tu regardes qui implémente quoi, qui hérite de quoi, qui est utilisé dans quoi, et ainsi de suite...
- 4. Tu dessines le **diagramme UML /!\** sur une feuille en papier
- 
-      > (Voir Google, OpenClassroom pour les conventions de style)
- 5. Puis avec le logiciel que tu veux (Illustrator, M$oft Visio, ...), tu refais ça au propre à l'ordi
-
-**Deadline : Lundi 13 avril**
-
-Thanks !
+> terminer le rapport. 
 
 ### To do list : Programme
 1. ~~Implémenter l'interface TreeBuilderIF => Voir annexe : buildExpressionTree~~
 2. ~~Implémenter l'interface ExprIF~~
   - ~~getReducedTree()~~ 
   - ~~toString()~~
-3. Tester les 2 implémentations 
+3. ~~Tester les 2 implémentations~~
 4. ~~Implémenter l'algorithme récursif, parcourant l'AST~~
 5. ~~Implémenter la résolution de l'AST~~ 
-6. Tester la résolution de l'expression mathématique
+6. ~~Tester la résolution de l'expression mathématique~~
 7. ~~Implémenter la classe Main, permettant d'entrer des arguments en paramètre~~
-8. Tester le programme et les performances
+8. ~~Tester le programme et les performances~~
 9. Effectuer des optimisations au niveau de l'expression mathématique
   - Simplifications *évidentes* => 1*a = a ; 0+a = a ; ...
 10. Retester les performances 
 
 ### To do list : Rapport
 - Diagramme de classes
-- Choix d'implémentation
-- Complexité des différentes opérations des interfaces **TreeBuilderIF** & **ExprIF**
+- ~~Choix d'implémentation~~
+- ~~Complexité des différentes opérations des interfaces **TreeBuilderIF** & **ExprIF**~~
 - Difficultés rencontrées 
 
 ### Choix de l'implémentation de l'arbre 
