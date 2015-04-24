@@ -34,7 +34,6 @@ public enum OpType {
                 return Double.NaN;
         }
     }
-
     public char getOperation() {
         return operation;
     }
